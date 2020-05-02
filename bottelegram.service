@@ -1,0 +1,14 @@
+# ***telegramcontroller.service***
+[Unit]
+Description=Controlador de Telegram
+After=multi-user.target
+ 
+[Service]
+Type=simple
+User=root
+ExecStart=/bin/bash -c '/home/controller.sh'
+StandardOutput=append:/home/output_log
+StandardError=append:/home/error_log
+ 
+[Install]
+WantedBy=multi-user.target
